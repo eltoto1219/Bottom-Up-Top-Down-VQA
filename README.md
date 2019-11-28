@@ -22,6 +22,7 @@ See config.py
 8. Tokenizer for Answers and Questions: Spacey Enlglish tokenizer
 9. Image embedding dimension: 2048
 10. Max number of objects per image: 100
+11. Pre-computed image embeddings consist of Bottom up features on the MSCOCO dataset extracted using a Faster R-CNN object detection model trained on the Visual Genome dataset 
 
 
 
