@@ -4,7 +4,7 @@ This is a replication of the winning 2017 VQA model. This project more specifica
 ### Instructions for getting preprocessed data
 Use this library: https://pypi.org/project/gdown/<br/>
 For preprocessed question ID to answer, question, image ID, etc... dictionaries, run the following (.pkl): <br/>
-`gdown https://drive.google.com/uc?id=1c5GXpL3p8YoYq3FIMDBwMjP684k1Gt5g` <br/>
+`gdown https://drive.google.com/uc?id=1fyGqPZxEcz5sCYKNZQBvkD74q2Q6hhu2` <br/>
 For GloVe token embeddings (300d), run the following (.pkl): <br/>
 `gdown https://drive.google.com/uc?id=1rm_txmQD5t9-jxq5YDbhyNtQ6i7Sc3EM` <br/>
 For preprocessed adaptive features, run the following (.h5): <br/>
