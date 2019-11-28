@@ -19,8 +19,9 @@ See config.py
 5. Min Answer freqecny: 9
 6. Ansswer Score type: softscore (multiple answers per question, so we weight answer based on confidence)
 7. Total Answers to predict: 3133
-8. Image embedding dimension: 2048
-9. Max number of objects per image: 100
+8. Tokenizer for Answers and Questions: Spacey Enlglish tokneizer
+9. Image embedding dimension: 2048
+10. Max number of objects per image: 100
 
 
 
