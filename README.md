@@ -14,10 +14,11 @@ See config.py
 ### Preprocesed Question/Answer Specifications
 1. Max Question tokens: 14 
 2. Quesiton processing: remove all special characters
-3. Answer processing: remove all special characters, remove all punctuation
-4. Min Answer freqecny: 9
+3. Question padding: padding token = 0, righ-hand-side padding
+4. Answer processing: remove all special characters, remove all punctuation
+5. Min Answer freqecny: 9
 6. Ansswer Score type: softscore (multiple answers per question, so we weight answer based on confidence)
-5. Total Answers to predict: 3133
+7. Total Answers to predict: 3133
 
 
 
