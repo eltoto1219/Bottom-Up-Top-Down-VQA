@@ -11,7 +11,7 @@ For preprocessed adaptive features, run the following (.h5): <br/>
 `gdown https://drive.google.com/uc?id=1YBQFZOqIxEoXgd_5bBOvaskbje1tbCeP` <br/>
 ### General Config
 See config.py 
-### Preprocesed Question/Answer Specifications
+### Preprocesed Question/Answer/Image Specifications
 1. Max Question tokens: 14 
 2. Quesiton processing: remove all special characters
 3. Question padding: padding token = 0, righ-hand-side padding
@@ -19,6 +19,8 @@ See config.py
 5. Min Answer freqecny: 9
 6. Ansswer Score type: softscore (multiple answers per question, so we weight answer based on confidence)
 7. Total Answers to predict: 3133
+8. Image embedding dimension: 2048
+9. Max number of objects per image: 100
 
 
 
