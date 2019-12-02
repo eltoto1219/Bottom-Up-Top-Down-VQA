@@ -30,7 +30,7 @@ class Config():
         parser.add_argument('--device', type=str, default="cpu")
         parser.add_argument('--seed', type=int, default=1111)
         parser.add_argument('--benchmark', type=str2bool, default=True)
-        parser.add_argument('--data_root', type=str, default="/pine/scr/a/v/avmendoz/VQA_data/")
+        parser.add_argument('--data_root', type=str, default="/playpen/home/avmendoz/data")
         parser.add_argument('--output', type=str, default="logs")
         parser.add_argument('--ckp_path', type=str, default="logs/ckp")
         parser.add_argument('--tb_path', type=str, default="logs/tb")
@@ -53,6 +53,7 @@ class Config():
         parser.add_argument('--SGD', type=str2bool, default=True)
         parser.add_argument('--lr', type=float, default=1e-3)
         parser.add_argument('--momentum', type=float, default=0.85)
+        parser.add_argument('--grad_clip', type=float, default=0.25)
         return parser
 
     def __init__(self):

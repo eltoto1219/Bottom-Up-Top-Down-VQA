@@ -35,7 +35,7 @@ def batch(config, model, optim, loader, writer, train):
             loss = compute_multi_loss(pred, a)
             loss_item = round(loss.item(), 3)
             loss.backward()
-            nn.utils.clip_grad_norm_(model.grad_params(), 5)
+            nn.utils.clip_grad_norm_(model.grad_params(), config.grad_clip)
             optim.step()
 
         else:
@@ -79,6 +79,7 @@ def epochs(config, model, optim, writer, train_loader, val_loader, test_loader, 
         config.epoch += 1
         
 def main(config):
+    torch.cuda.empty_cache()
 
     ### set seed ###
     if config.seed:
