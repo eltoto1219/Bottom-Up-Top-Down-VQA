@@ -9,6 +9,17 @@ For GloVe token embeddings (300d), run the following (.pkl): <br/>
 `gdown https://drive.google.com/uc?id=1rm_txmQD5t9-jxq5YDbhyNtQ6i7Sc3EM` <br/>
 For preprocessed adaptive features, run the following (.h5): <br/>
 `gdown https://drive.google.com/uc?id=1YBQFZOqIxEoXgd_5bBOvaskbje1tbCeP` <br/>
+Training Annotations <br/>
+`wget https://s3.amazonaws.com/cvmlp/vqa/mscoco/vqa/v2_Annotations_Train_mscoco.zip` <br/>
+Validation Annotations <br/>
+`wget https://s3.amazonaws.com/cvmlp/vqa/mscoco/vqa/v2_Annotations_Val_mscoco.zip` <br/>
+Training Questions <br/>
+`wget https://s3.amazonaws.com/cvmlp/vqa/mscoco/vqa/v2_Questions_Train_mscoco.zip`<br/>
+Validation Questions <br/>
+`wget https://s3.amazonaws.com/cvmlp/vqa/mscoco/vqa/v2_Questions_Val_mscoco.zip` <br/>
+Test Questions <br/>
+`wget https://s3.amazonaws.com/cvmlp/vqa/mscoco/vqa/v2_Questions_Test_mscoco.zip` <br/>
+
 ### General Config
 See config.py 
 ### Preprocesed Question/Answer/Image Specifications
