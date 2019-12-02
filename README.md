@@ -2,6 +2,7 @@
 This is a replication of the winning 2017 VQA model. This project more specifically investigates how different weight normalization techniques and the use of different parameter optimizers effect overall validation performance 
 
 ### Instructions for getting preprocessed data
+Put all of this data in one directory and point the data_path config option in config.py to it <br/>
 Use this library: https://pypi.org/project/gdown/<br/>
 For preprocessed question ID to answer, question, image ID, etc... dictionaries, run the following (.pkl): <br/>
 `gdown https://drive.google.com/uc?id=1fyGqPZxEcz5sCYKNZQBvkD74q2Q6hhu2` <br/>
