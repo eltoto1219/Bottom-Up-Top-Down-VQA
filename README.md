@@ -25,7 +25,7 @@ See config.py
 11. Pre-computed image embeddings consist of Bottom up features on the MSCOCO dataset extracted using a Faster R-CNN object detection model trained on the Visual Genome dataset 
 ### Run Expirement
 To run expirements: <br>
-`./scripts/EXP_NAME.sh`
+`./scripts/EXP_NAME.sh` <br>
 For Slrum: <br>
 `sbatch slurm/EXP_NAME.sh`
 
