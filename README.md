@@ -1,26 +1,14 @@
 # Bottom-Up-Top-Down-VQA
 This is a replication of the winning 2017 VQA model. This project more specifically investigates how different weight normalization techniques and the use of different parameter optimizers effect overall validation performance 
-
 ### Instructions for getting preprocessed data
-Put all of this data in one directory and point the data_path config option in config.py to it <br/><br/>
-Use this library: https://pypi.org/project/gdown/<br/>
+set the `data_root` argument in config.py to ./data. 
+wget the following in the ./data directory and unzip. <br/>
 For preprocessed question ID to answer, question, image ID, etc... dictionaries, run the following (.pkl): <br/>
-`gdown https://drive.google.com/uc?id=1fyGqPZxEcz5sCYKNZQBvkD74q2Q6hhu2` <br/>
+`wget https://vqa-dnac.s3.amazonaws.com/dicts/dicts.zip` <br/>
 For GloVe token embeddings (300d), run the following (.pkl): <br/>
-`gdown https://drive.google.com/uc?id=1rm_txmQD5t9-jxq5YDbhyNtQ6i7Sc3EM` <br/>
+`wget https://vqa-dnac.s3.amazonaws.com/token-weights/token_weights.zip` <br/>
 For preprocessed adaptive features, run the following (.h5): <br/>
-`gdown https://drive.google.com/uc?id=1YBQFZOqIxEoXgd_5bBOvaskbje1tbCeP` <br/>
-Training Annotations <br/>
-`wget https://s3.amazonaws.com/cvmlp/vqa/mscoco/vqa/v2_Annotations_Train_mscoco.zip` <br/>
-Validation Annotations <br/>
-`wget https://s3.amazonaws.com/cvmlp/vqa/mscoco/vqa/v2_Annotations_Val_mscoco.zip` <br/>
-Training Questions <br/>
-`wget https://s3.amazonaws.com/cvmlp/vqa/mscoco/vqa/v2_Questions_Train_mscoco.zip`<br/>
-Validation Questions <br/>
-`wget https://s3.amazonaws.com/cvmlp/vqa/mscoco/vqa/v2_Questions_Val_mscoco.zip` <br/>
-Test Questions <br/>
-`wget https://s3.amazonaws.com/cvmlp/vqa/mscoco/vqa/v2_Questions_Test_mscoco.zip` <br/>
-
+`wget https://vqa-dnac.s3.amazonaws.com/features/adaptive_features.zip` <br/>
 ### General Config
 See config.py 
 ### Preprocesed Question/Answer/Image Specifications
@@ -35,6 +23,14 @@ See config.py
 9. Image embedding dimension: 2048
 10. Max number of objects per image: 100
 11. Pre-computed image embeddings consist of Bottom up features on the MSCOCO dataset extracted using a Faster R-CNN object detection model trained on the Visual Genome dataset 
+### Run Expirement
+To run expirements: <br>
+`./scripts/EXP_NAME.sh`
+For Slrum: <br>
+`sbatch slurm/EXP_NAME.sh`
+
+
+
 
 
 
