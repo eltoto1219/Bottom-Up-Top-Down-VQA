@@ -11,6 +11,29 @@ from config import Config
 ### model Imports
 from main_functions import tb_writer, load_data, load_model
 
+#def eval_epoch(config, model, val_loader):
+#
+#    device = config.device
+#    tq_loader = tqdm(iterable = val_loader, desc = "eval:{}".format(config.name), ncols = 0)
+#
+#    for i, (v, bb, spat, obs, a, q, q_len, item) in enumerate(tq_loader):
+#        model.train()
+#        begin_iter = datetime.now()
+#
+#        v, bb, spat, a, q, objs, q_len = v.to(device), bb.to(device),\
+#            spat.to(device), a.to(device), q.to(device), obs.to(device), q_len.to(device)
+#
+#        with torch.no_grad():
+#            loss, out, atts = model(q, q_len, v, obs, a, layout = True, 
+#            loss = loss.mean().item()
+#            acc = compute_multi_acc(out, a) 
+#            accs.append(acc)
+#            avg_acc = sum(accs)/len(accs)
+#
+#        tq_loader.set_postfix(acc = avg_acc, loss = loss)
+#        tq_loader.update(i)
+# 
+
 def batch(config, model, optim, loader, writer, train):
 
     ### prelims ###
@@ -50,6 +73,7 @@ def batch(config, model, optim, loader, writer, train):
         avg_accs.append(acc)
         avg_acc = round(sum(avg_accs)/len(avg_accs), 3)
         avg_loss = round(sum(avg_losses)/len(avg_losses), 3) 
+
         if train:
             config.batch_iter += 1
             save_iter = config.batch_iter
@@ -62,11 +86,12 @@ def batch(config, model, optim, loader, writer, train):
             write_events(writer, save_iter, config.epoch, acc, avg_acc, loss, avg_loss, 
                         train = train)
 
+        ### step 4: save ###
+
         tq_loader.set_postfix(acc = acc, loss = loss_item, m_loss = avg_loss, m_acc = avg_acc)
         tq_loader.update(save_iter)
 
 def epochs(config, model, optim, writer, train_loader, val_loader, test_loader, start):
-
 
     for _ in range(start, config.epochs):
         if config.train:

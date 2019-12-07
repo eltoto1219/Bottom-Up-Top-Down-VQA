@@ -1,9 +1,17 @@
+### personal ignore ###
+logs/
+venv/
+ckps/*
+traceback*
+data/
+!traceback/.gitkeep
+!ckps/.gitkeep
+!data/.gitkeep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-venv/
-logs/
 
 # C extensions
 *.so

@@ -1,0 +1,49 @@
+INITIALIZING config AND run...
+
+	 name : ln_exp
+	 train : True
+	 val : False
+	 test : False
+	 device : cuda
+	 pin : False
+	 seed : 1111
+	 benchmark : True
+	 data_root : /pine/scr/a/v/avmendoz/VQA-research/data
+	 output : logs
+	 ckp_path : logs/ckp
+	 tb_path : logs/tb
+	 log_tb : True
+	 epoch : 0
+	 batch_iter : 0
+	 epochs : 18
+	 batch_size : 512
+	 ckp : None
+	 e_dim : 300
+	 q_dim : 1024
+	 v_dim : 2048
+	 a_dim : 3133
+	 proj_dim : 1024
+	 bn : False
+	 wn : False
+	 ln : True
+	 SGD : False
+	 lr : 0.001
+	 momentum : 0.85
+	 grad_clip : 0.25
+
+LOADING: val 
+
+number of answers to predict: 3133
+number of words: 18248
+number of questions: 210165
+question length: 14 
+
+LOADING: train 
+
+number of answers to predict: 3133
+number of words: 18248
+number of questions: 435087
+question length: 14 
+
+LOADING: model ... 
+

@@ -32,19 +32,19 @@ def load_data(config):
             root_dir = root , 
             test = True) 
         test_loader = torch.utils.data.DataLoader(data_test, batch_size=batch_size, 
-            shuffle=True, pin_memory = True)
+            shuffle=True, pin_memory = config.pin)
     if val or train:
         data_val = VQA_dataset(
             root_dir = root , 
             val = True)
         val_loader = torch.utils.data.DataLoader(data_val, batch_size=batch_size, 
-            shuffle=True, pin_memory = True)
+            shuffle=True, pin_memory = config.pin)
     if train:
        data_train = VQA_dataset(
             root_dir = root , 
             train = True)
        train_loader = torch.utils.data.DataLoader(data_train, batch_size=batch_size, 
-            shuffle=True, pin_memory = True)
+            shuffle=True, pin_memory = config.pin)
 
     return train_loader, val_loader, test_loader
 
@@ -67,10 +67,10 @@ def tb_writer(config):
         os.mkdir(tb_path)
     except:
         pass
-
     writer = SummaryWriter(log_dir = tb_path)
     config.ckp_path = ckp_path
     config.tb_path = tb_path
+
     return writer
 
 def load_model(config):
@@ -105,13 +105,12 @@ def load_model(config):
         optim = torch.optim.Adam(model.grad_params()) 
 
     ### loading from checkpoint if possible ###
-    if config.ckp_epoch is None:
+    if config.ckp is None:
         batch_iter = 0
         epoch = 0
     else:
-        epoch = config.ckp_epoch + 1
-        ckp = ckp_path + "/{}_epoch_{}.pth".format(name, ckp_epoch)
-        checkpoint = torch.load(ckp, map_location=torch.device(device))
+        checkpoint = torch.load(config.ckp, map_location=torch.device(device))
+        epoch = checkpoint["epoch"]
         pretrained_dict = checkpoint["weights"]
         batch_iter = checkpoint["batch_iter"]
         w_optim_dict = checkpoint["w_optim_dict"]
